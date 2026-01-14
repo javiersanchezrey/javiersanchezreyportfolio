@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #0e0e0e;
+  color: #fff;
+}
+
+/**** Cabecera ****/
+.cabecera {
+  min-height: 100vh;
+
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.intro {
+  line-height: 1.5;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: auto auto;
+
+  gap: 48px;
+}
+
+/* Cada bloque (Design / Development) */
+.bloque-Skills {
+  display: grid;
+
+  grid-template-columns: 120px 1fr;
+
+  gap: 24px;
+
+  font-size: 14px;
+  
+  color: #d0d0d0;
+}
+
+.titulo-Skills {
+  opacity: 0.8;
+}
+
+.nombres-Skills {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  line-height: 1.4;
+}
+
+.nombre-Grande {
+  font-size: 200px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -5px;
+  white-space: nowrap;
+}
+
+/* tablet */
+@media (max-width: 992px) {
+  .nombre-Grande {
+    font-size: 100px;
+  }
+}
+
+/* móvil grande / smartphone */
+@media (max-width: 768px) {
+  .nombre-Grande {
+    font-size: 80px; /* un poco más grande que antes para móviles */
+  }
+}
+
+/* móvil pequeño */
+@media (max-width: 480px) {
+  .nombre-Grande {
+    font-size: 60px; /* sigue siendo legible pero no se rompe */
+  }
+}
+
+/**** Sección Imágenes ****/
+.seccion-imagenes {
+  margin-top: 80px;
+}
+
+.bloque-img img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bloque-img figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #bdbdbd;
+  line-height: 1.4;
+}
+
+.bloque-img.grande {
+  margin-top: 40px;
+}
+
+/* Overlay Proyectos */
+.contenido-imagenes img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.sobreponer-imagenes {
+  position: fixed;
+  inset: 0;
+  background: #0e0e0e;
+  color: #fff;
+  z-index: 1000;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.sobreponer-imagenes.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contenido-imagenes {
+  height: 100%;
+  overflow-y: auto;
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.boton-cerrar {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+/* TEXTO SUPERIOR */
+.cabecera-imagenes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.cabecera-imagenes h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.cabecera-imagenes p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cfcfcf;
+}
+
+/* GALERÍA HORIZONTAL (ayuda Chat)*/
+.galeria-imagenes {
+  display: flex;
+  gap: 40px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 20px;
+
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* OCULTAR SCROLLBAR (ayuda Chat) */
+.galeria-imagenes::-webkit-scrollbar {
+  display: none;
+}
+.project-gallery {
+  scrollbar-width: none;
+}
+
+/* IMÁGENES */
+.galeria-imagenes img {
+  flex: 0 0 auto;
+  width: 420px;
+  height: auto;
+
+  border-radius: 16px;
+  object-fit: cover;
+
+  cursor: pointer;
+
+  scroll-snap-align: start;
+
+  transition: transform 0.4s ease;
+}
+
+/***** Seccion 2 de imagenes de archivos. *******/
+.archivos-imagnes {
+  flex: 0 0 320px;
+  padding: 32px;
+
+  background: #151515;
+  border-radius: 16px;
+
+  text-decoration: none;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.archivos-imagnes:hover {
+  transform: translateY(-6px);
+  background: #1d1d1d;
+}
+
+.nombre-archivo {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.tipos-archivo {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* enlaces de proyecto */
+.links-imagenes {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* contenido con scroll */
+.contenido-imagenes {
+  height: 100%;
+  overflow-y: auto;
+  padding: 100px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contenido-imagenes img {
+  width: 100%;
+  margin: 60px 0;
+  display: block;
+}
+
+/* botón cerrar */
+.boton-cerrar {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: 1px solid #444;
+  color: white;
+  padding: 6px 14px;
+}
+
+
+/****** Cargador página principio (Ayuda de mi colega el Chat) ******/
+/* LOADER */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #0e0e0e;
+  z-index: 10000;
+}
+
+/* NÚMERO  (ayuda de mi colega Chat) */
+#loader-count {
+  position: absolute;
+  right: 40px;
+  bottom: 32px;
+
+  font-size: clamp(6rem, 18vw, 14rem);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+
+  color: white;
+
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* DESAPARICIÓN  (ayuda de mi colega Chat) */
+#loader.hidden #loader-count {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+footer p{
+  color: #444;
+  font-size: 15px;
+  text-align: center;
+}
