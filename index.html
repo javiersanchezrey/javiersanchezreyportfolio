@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="Styles/bootstrap.min.css">
   <link rel="stylesheet" href="Styles/styles.css">
+  <script src="scripts/scripts.js"></script>
 
   <link rel="icon" href="img/favicon.png">
 
@@ -25,45 +26,47 @@
           <p class="intro">
             👋🏻👋🏻 ¡¡Heyy!! 👋🏻👋🏻 <br>
             Yo soy Javier un chico que le gusta programar y hacer páginas web, ahora mismo estoy estudiando DAW, pero antes que eso estudie Diseño Gráfico. <br>
-            Espero que os guste mi página.😁😁
+            Aquí os dejo los conocimientos que tengo y tambien algunos de los proyectos que he realizado.
           </p>
         </div>
 
     <!-------- Seccion Skills -------->
-      <div class="col-12 col-md-6">  
-        <div class="skills">
+<div class="col-12 col-md-7"> <!-- He subido un punto el col-md para dar más espacio -->
+  <div class="skills">
 
-            <div class="bloque-Skills">
-
-                <span class="titulo-Skills"> Diseño </span>
-                  <div class="nombres-Skills">
-                    
-                    <span> Figma </span>
-                    <span> Adobe XD </span>
-                    <span> Photoshop </span>
-                    <span> InDesign </span>
-                    <span> Illustrator </span>
-
-                  </div>
-            </div>
-
-          
-            <div class="bloque-Skills">
-
-                  <span class="titulo-Skills"> Desarrollo </span>
-
-                  <div class="nombres-Skills">
-
-                    <span> Webflow </span>
-                    <span> HTML / CSS </span>
-                    <span> Java (empezando) </span>
-                    <span> Javascript (empezando) </span>
-                    <span> MySQL (empezando) </span>
-
-                  </div>
-            </div>
-        </div>
+    <!-- Bloque 1 -->
+    <div class="bloque-Skills">
+      <span class="titulo-Skills"> Diseño </span>
+      <div class="nombres-Skills">
+        <span> Figma </span>
+        <span> Adobe XD </span>
+        <span> Photoshop </span>
+        <span> InDesign </span>
+        <span> Illustrator </span>
       </div>
+    </div>
+
+    <!-- Bloque 2 -->
+    <div class="bloque-Skills">
+      <span class="titulo-Skills"> Desarrollo </span>
+      <div class="nombres-Skills">
+        <span> HTML / CSS </span>
+        <span> Java </span>
+        <span> Javascript / JSON </span>
+        <span> MySQL </span>
+        <span> Microsoft PowerBi (empezando) </span>
+      </div>
+    </div>
+
+    <!-- Botón al lado derecho -->
+    <div class="boton-email-contenedor">
+      <a href="mailto:javiersanchezrey8@gmail.com" class="btn-contacto" title="Enviame un correo">
+        Escríbeme para más
+      </a>
+    </div>
+
+  </div>
+</div>
 
     </div>
 
@@ -171,6 +174,13 @@
             <span class="tipos-archivo">HTML / CSS</span>
 
           </a>
+
+          <a href="Proyectos-HTML/WEB 3 (Porsche).zip" download class="archivos-imagnes">
+
+            <span class="nombre-archivo"> Web 3 (Proyecto clase de Porsche)</span>
+            <span class="tipos-archivo">HTML / CSS</span>
+
+          </a>
         </div>
       </div>
     </div>
@@ -194,80 +204,14 @@
 </section>
 
 <footer>
-  <p> Esta página web ha sido creada por mí con la ayuda de ChatGPT, especialmente en JavaScript y animaciones. </p>
+  <p> Espero que te guste como ha quedado la página y te de una idea de lo que soy capaz de hacer 😁😁.
+  </p>
 </footer>
 
-
-<!-------- JavaScript (Ayuda de mi colega el Chat) -------->
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-
-    const links = document.querySelectorAll('.links-imagenes');
-    const overlays = document.querySelectorAll('.sobreponer-imagenes');
-    const closeButtons = document.querySelectorAll('.boton-cerrar');
-
-    // ABRIR PROYECTO
-    links.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-
-        const id = link.dataset.project;
-        const overlay = document.getElementById(id);
-
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    // CERRAR PROYECTO
-    closeButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        overlays.forEach(overlay => overlay.classList.remove('active'));
-        document.body.style.overflow = '';
-      });
-    });
-
-      overlays.forEach(overlay => {
-        overlay.addEventListener('click', e => {
-          if (e.target === overlay) {
-              overlay.classList.remove('active');
-              document.body.style.overflow = '';
-        }
-      });
-});
-
-  });
-</script>
-
-<!-------- LOADER (Ayuda de mi colega el Chat) -------->
 <div id="loader">
   <span id="loader-count">0%</span>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const loader = document.getElementById('loader');
-    const counter = document.getElementById('loader-count');
-
-    let count = 0;
-
-    const interval = setInterval(() => {
-      count++;
-      counter.textContent = count + '%';
-
-      if (count >= 100) {
-        clearInterval(interval);
-
-        // pequeña pausa para que se vea el 100%
-        setTimeout(() => {
-          loader.classList.add('hidden');
-        }, 300);
-      }
-    }, 20); // velocidad del contador
-  });
-
-</script>
 
 </body>
 </html>
