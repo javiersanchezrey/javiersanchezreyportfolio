@@ -189,11 +189,18 @@ body {
 /* Overlay Proyectos */
 .contenido-imagenes img {
   width: 100%;
-  max-width: 100%;
-  height: auto;
+  max-width: 500px;
+  height: 300px;
 
   border-radius: 8px;
   object-fit: cover;
+}
+
+.img-ancha {
+  width: 800px !important;
+  height: auto;
+  object-fit: contain !important;
+  background: #151515;
 }
 
 .sobreponer-imagenes {
