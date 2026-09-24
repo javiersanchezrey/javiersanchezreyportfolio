@@ -28,23 +28,29 @@ body {
 
 .skills {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr;
 
-  gap: 48px;
+  gap: 32px;
+  
+  align-items: start;
+}
 
-  align-items: center;
+.columna-skill-grupo {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 24px;
 }
 
 /* Bloque Design / Desarrollo */
 .bloque-Skills {
-  display: grid;
+  display: flex;
+  flex-direction: column;
 
-  grid-template-columns: 100px 1fr;
-
-  gap: 24px;
+  gap: 12px;
 
   font-size: 14px;
-  
+
   color: #d0d0d0;
 }
 
@@ -62,7 +68,7 @@ body {
 }
 
 .nombre-Grande {
-  font-size: 200px;
+  font-size: clamp(3rem, 14vw, 13rem);
   font-weight: 500;
 
   line-height: 1;
@@ -73,26 +79,29 @@ body {
 }
 
 .btn-contacto {
+    flex: 1;
+
     display: flex;
-
+    
     align-items: center;
+    
     justify-content: center;
-
+    
     text-align: center;
     text-decoration: none;
-
+    
     padding: 12px 20px;
-    min-width: 120px;
-
+    
     background-color: #000;
+    
     color: white;
-
+    
     border: 1px solid #d0d0d0;
     border-radius: 7px;
-
+    
     font-size: 14px;
-
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    
+    transition: all 0.3s ease;
 }
 
 .btn-contacto:hover {
@@ -104,25 +113,11 @@ body {
 /* Ajuste para móviles */
 .botones-contacto-contenedor {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    justify-content: center;
-}
+    flex-direction: row;
 
-.btn-contacto {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none;
-    padding: 12px 20px;
-    min-width: 140px;
-    background-color: #000;
-    color: white;
-    border: 1px solid #d0d0d0;
-    border-radius: 7px;
-    font-size: 14px;
-    transition: all 0.3s ease;
+    gap: 15px;
+
+    margin-top: 30px;
 }
 
 .btn-cv {
@@ -140,15 +135,16 @@ body {
 /* --- RESPONSIVE MÓVIL --- */
 @media (max-width: 768px) {
     .skills {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        row-gap: 30px;
-    }
+      display: grid;
+      grid-template-columns: 100px 1fr;
+
+      gap: 24px;
+      
+      align-items: center;
+  }
 
     .botones-contacto-contenedor {
-        grid-column: span 2;
         flex-direction: row;
-        gap: 10px;
     }
 
     .btn-contacto {
